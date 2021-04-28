@@ -134,7 +134,7 @@ const App = () => {
 
   return (
     <>
-      <div className="agent-wrapper">
+      {/* <div className="agent-wrapper">
         <AgentHeader />
         {agentClient ? (
           <Chat client={agentClient}>
@@ -143,7 +143,7 @@ const App = () => {
         ) : (
           <AgentLoading />
         )}
-      </div>
+      </div> */}
       {customerClient && (
         <Chat client={customerClient} theme={`commerce ${theme}`}>
           <CustomerApp {...{ customerChannelId }} />

@@ -63,7 +63,7 @@ body::-webkit-scrollbar-thumb {
 .customer-wrapper {
   position: absolute;
   bottom: 16px;
-  left: 16px;
+  right: 16px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -77,13 +77,15 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   align-items: flex-start;
   border-radius: 32px;
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.18);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.18);
 }
 
 .customer-wrapper .str-chat {
   height: 100%;
   border-radius: 32px;
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.18);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.18);
 }
 
 .customer-wrapper .str-chat__container {
@@ -105,7 +107,8 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   border-radius: 30px;
   cursor: pointer;
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.18);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.18);
 }
 
 .toggle-button.close-button svg {
@@ -147,7 +150,8 @@ body::-webkit-scrollbar-thumb {
   padding: 10px 4px;
 }
 
-.str-chat__message-commerce--right.str-chat__message-commerce .str-chat__message-commerce-text-inner--is-emoji {
+.str-chat__message-commerce--right.str-chat__message-commerce
+  .str-chat__message-commerce-text-inner--is-emoji {
   background: #fff;
 }
 
@@ -159,7 +163,8 @@ body::-webkit-scrollbar-thumb {
   display: none;
 }
 
-.str-chat__message-commerce--right.str-chat__message-commerce .str-chat__message-commerce-data {
+.str-chat__message-commerce--right.str-chat__message-commerce
+  .str-chat__message-commerce-data {
   display: none;
 }
 
@@ -180,10 +185,16 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
 }
 
-.agent-wrapper .messaging.str-chat .str-chat__list .str-chat__reverse-infinite-scroll {
+.agent-wrapper
+  .messaging.str-chat
+  .str-chat__list
+  .str-chat__reverse-infinite-scroll {
 }
 
-.customer-wrapper .commerce.str-chat .str-chat__list .str-chat__reverse-infinite-scroll {
+.customer-wrapper
+  .commerce.str-chat
+  .str-chat__list
+  .str-chat__reverse-infinite-scroll {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
