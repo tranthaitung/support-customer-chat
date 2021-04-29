@@ -15,25 +15,21 @@ import { AgentLoading } from "./components/AgentLoading/AgentLoading";
 import { CustomerApp } from "./CustomerApp";
 
 const urlParams = new URLSearchParams(window.location.search);
-const apiKey = "dz5f4d5kzrue";
-const agentChannelId = `agent-demo-${uuidv4()}`;
-const customerChannelId = `customer-demo-${uuidv4()}`;
+const apiKey = "dt775crxd3mq";
+const agentChannelId = `agent-demo-`;
+const customerChannelId = `customer-demo1`;
 const targetOrigin =
   urlParams.get("target_origin") || process.env.REACT_APP_TARGET_ORIGIN;
 const theme = "light";
 
-const previousUserId =
-  urlParams.get("user1") || process.env.REACT_APP_PREVIOUS_ID;
-const previousUserToken =
-  urlParams.get("user1_token") || process.env.REACT_APP_PREVIOUS_TOKEN;
-
-const agentUserId = "curly-river-3";
+const agentUserId = "ltntamdev";
 const agentUserToken =
-  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiY3VybHktcml2ZXItMyJ9.HHReG2g6xCp3bVDYzWc6uuXjnTwnh-U8pLD782fP72w";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoibHRudGFtZGV2In0.py0JHOuByEz4XM0O-SQ9deqyoKXW30nRRAexuJpv1Ms";
 
-const customerUserId = "winter-mouse-8";
+const customerUserId = "user-test-1";
 const customerUserToken =
-  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoid2ludGVyLW1vdXNlLTgiLCJleHAiOjE2MTk0NzUxNTd9.Mo1B49k22RVihNMsKOoDUwlddgQ_NRZ5rE9YTZQzeoE";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoidXNlci10ZXN0LTEifQ.0SY046VbeXFN11xPklMRYEQ-ticQfNbRRoOTaG_K_cU";
+
 const customerClient = StreamChat.getInstance(apiKey);
 customerClient.connectUser(
   {
@@ -95,17 +91,13 @@ const App = () => {
   useEffect(() => {
     const sendMessages = async () => {
       await initialChannel.sendMessage({
-        text: "I have a question about Enterprise"
+        text: "Hey there"
       });
-
       await initialChannel.sendMessage({
-        text:
-          "My company is looking to upgrade our account to Enterprise. Can you provide me with some additional pricing information?"
+        text: "What Can I help you with"
       });
-
-      await initialChannel.stopWatching();
-      await initialClient.disconnect();
-
+      // await initialChannel.stopWatching();
+      // await initialClient.disconnect();
       const client = new StreamChat(apiKey); // since app is dual client need to construct an additional instance
       await client.connectUser(
         {
@@ -134,7 +126,7 @@ const App = () => {
 
   return (
     <>
-      {/* <div className="agent-wrapper">
+      <div className="agent-wrapper">
         <AgentHeader />
         {agentClient ? (
           <Chat client={agentClient}>
@@ -143,12 +135,12 @@ const App = () => {
         ) : (
           <AgentLoading />
         )}
-      </div> */}
-      {customerClient && (
+      </div>
+      {/* {customerClient && (
         <Chat client={customerClient} theme={`commerce ${theme}`}>
           <CustomerApp {...{ customerChannelId }} />
         </Chat>
-      )}
+      )} */}
     </>
   );
 };
